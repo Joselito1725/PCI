@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="IconWeb.png" type="image/png">
+    <title>Portafolio de Cálculo Integral</title>
+    <!-- Font Awesome para iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Fuente Inter de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Script para renderizar expresiones LaTeX (MathJax) -->
+    <!-- Configuración de MathJax para asegurar el procesamiento de delimitadores de LaTeX -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            options: {
+                // IMPORTANTE: Sobrescribe la configuración por defecto para que MathJax no ignore
+                // las etiquetas <pre> y <code> al buscar expresiones matemáticas.
+                // Al establecer 'ignoreHtmlClass' a una clase que no existe, forzamos a MathJax
+                // a procesar todo el contenido HTML, incluyendo el que se carga dinámicamente.
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            },
+            startup: {
+                ready: function() {
+                    // Configuración adicional si es necesaria después de que MathJax esté listo
+                    MathJax.startup.defaultReady();
+                }
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content container">
+            <a href="#" class="logo" onclick="showPage('home')">
+                <i></i>Cálculo Integral
+            </a>
+            <nav class="nav">
+                <button class="nav-btn" onclick="showPage('home')">
+                    <i class="fas fa-home"></i> Inicio
+                </button>
+                
+                <div class="dropdown">
+                    <button class="nav-btn dropdown-toggle">
+                        <i class="fas fa-book-open"></i> Temas <i class="fas fa-chevron-down dropdown-icon"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#" class="dropdown-item" onclick="showPage('definidas-indefinidas')">
+                            <i class="fas fa-infinity"></i> Definidas e Indefinidas
+                        </a>
+                        <a href="#" class="dropdown-item" onclick="showPage('por-partes')">
+                            <i class="fas fa-cut"></i> Por Partes
+                        </a>
+                        <a href="#" class="dropdown-item" onclick="showPage('volumen-revolucion')">
+                            <i class="fas fa-cube"></i> Volumen de Revolución
+                        </a>
+                        <a href="#" class="dropdown-item" onclick="showPage('longitud-arco')">
+                            <i class="fas fa-ruler-combined"></i> Longitud de Arco
+                        </a>
+                        <a href="#" class="dropdown-item" onclick="showPage('movimiento-particula')">
+                            <i class="fas fa-running"></i> Movimiento de Partícula
+                        </a>
+                        <a href="#" class="dropdown-item" onclick="showPage('funciones-trigonometricas')">
+                            <i class="fas fa-wave-square"></i> Funciones Trigonométricas
+                        </a>
+                        <a href="#" class="dropdown-item" onclick="showPage('metodo-sustitucion')">
+                            <i class="fas fa-exchange-alt"></i> Método de Sustitución
+                        </a>
+                        <a href="#" class="dropdown-item" onclick="showPage('sustitucion-trigonometrica')">
+                            <i class="fas fa-chart-line"></i> Sustitución Trigonométrica
+                        </a>
+                        <a href="#" class="dropdown-item" onclick="showPage('fracciones-parciales')">
+                            <i class="fas fa-divide"></i> Fracciones Parciales
+                        </a>
+                        <a href="#" class="dropdown-item" onclick="showPage('area-bajo-curva')">
+                            <i class="fas fa-area-chart"></i> Área bajo la Curva
+                        </a>
+                        <a href="#" class="dropdown-item" onclick="showPage('trabajo-w')">
+                            <i class="fas fa-hard-hat"></i> Trabajo (W)
+                        </a>
+                    </div>
+                </div>
+
+                <button class="nav-btn" onclick="showPage('about')">
+                    <i class="fas fa-user-graduate"></i> Sobre Mí
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main id="content">
+        <!-- El contenido de las páginas se cargará dinámicamente aquí mediante JavaScript -->
+    </main>
+
+    <!-- Script principal de la aplicación (cargado al final para asegurar que el DOM esté disponible) -->
+    <script src="Script.js"></script>
+</body>
+</html>
